@@ -118,6 +118,9 @@ class PyRobot():
             second=00
         ).timestamp()
 
+        if datetime.today().isoweekday() in [6, 7]:
+            return False
+
         right_now = datetime.utcnow().timestamp()
 
         if market_start_time >= right_now >= pre_market_start_time:
@@ -161,6 +164,9 @@ class PyRobot():
             second=00
         ).timestamp()
 
+        if datetime.today().isoweekday() in [6, 7]:
+            return False
+
         right_now = datetime.utcnow().timestamp()
 
         if post_market_end_time >= right_now >= market_end_time:
@@ -203,6 +209,9 @@ class PyRobot():
             minute=00,
             second=00
         ).timestamp()
+
+        if datetime.today().isoweekday() in [6, 7]:
+            return False
 
         right_now = datetime.utcnow().timestamp()
 
